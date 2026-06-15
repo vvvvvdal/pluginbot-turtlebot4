@@ -2,6 +2,11 @@
 
 ---
 
+# Visualização atual
+![Print do estado da simulação atual](imgs/simulacao_teste.png)
+
+---
+
 ## Estrutura
 
 - inspecao_parafusos.py: Visualização da câmera e visão computacional com YOLOv8.
