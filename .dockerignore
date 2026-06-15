@@ -1,0 +1,25 @@
+# Ignorar o controle de versão do Git
+.git
+.gitignore
+
+# Ignorar pastas de build e logs locais do ROS 2
+build/
+install/
+log/
+
+# Ignorar cache do Python (gerado pelo inspecao_parafusos.py)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar arquivos pesados de IA (pesos do YOLO)
+*.pt
+*.onnx
+
+# Ignorar pastas de sistema operacional e editores (VS Code)
+.vscode/
+.DS_Store
+
+# Ignorar o próprio README e scripts que não vão pra imagem
+README.md
