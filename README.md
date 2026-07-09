@@ -1,5 +1,9 @@
 # Pluginbot - TurtleBot4: Inspeção com Agente Autônomo
 
+![Teste DEFEITO DETECTADO](imgs/test_error.png)
+![Teste INSPECIONANDO...](imgs/test_fix.png)
+![Teste TUDO CERTO](imgs/test_ok.png)
+
 ---
 
 ## Estrutura do Projeto
