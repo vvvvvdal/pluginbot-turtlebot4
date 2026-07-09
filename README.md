@@ -6,7 +6,7 @@
 
 ---
 
-## Estrutura do Projeto
+# Estrutura do Projeto
 
 - `inspecao.py`: Ponto de entrada do sistema. Cria o nó ROS 2, define a rota de inspeção, conecta a navegação e a câmera, e executa o scan lateral quando precisa inspecionar um cubo.
 - `navegacao.py`: Módulo de navegação. Cuida de enviar o robô pros waypoints usando o Nav2 e de voltar pra doca no final.
@@ -85,9 +85,13 @@ docker build -t tb4_inspecao .
 
 # Fluxo de Execução
 
-O projeto pode ser executado em duas modalidades: simulado no Gazebo ou no robô físico real. O Cérebro (Ollama) precisa estar rodando na máquina host em ambas as opções.
+O projeto pode ser executado em duas modalidades: simulado no Gazebo ou no robô físico real. O Ollama precisa estar rodando na máquina host em ambas as opções.
 
-## Terminal 1: Subir o Cérebro (Ollama com modelo llama3.2:1b)
+---
+
+## Parte 1: Rodando na Simulação (Gazebo)
+
+### Terminal 1: Subir o Cérebro (Ollama com modelo llama3.2:1b)
 
 Inicializa o serviço do Ollama em background e carrega o modelo de IA leve na memória.
 
@@ -103,11 +107,7 @@ ollama run llama3.2:1b
 
 ---
 
----
-
-## Parte 1: Rodando na Simulação (Gazebo)
-
-## Terminal 2 e 3: Gazebo
+### Terminal 2 e 3: Gazebo
 
 Inicializa o TurtleBot4 no ambiente de simulação e carrega a parede com o QR Code.
 
@@ -137,7 +137,7 @@ ros2 run ros_gz_sim create -file /home/dockeruser/ws/src/cubos.sdf -x 0.0 -y 0.0
 
 ---
 
-## Terminal 4 e 5: SLAM e Nav2
+### Terminal 4 e 5: SLAM e Nav2
 
 Inicializa os sistemas de localização e navegação autônoma utilizando os parâmetros locais.
 
@@ -158,7 +158,7 @@ cmd_vel:=/turtlebot1/cmd_vel
 
 ---
 
-## Terminal 6: RViz2
+### Terminal 6: RViz2
 
 Interface gráfica para visualização do mapa, posição da parede e feedback visual do robô.
 *Fixed Frame:* `turtlebot1/map`
@@ -171,7 +171,7 @@ ros2 launch turtlebot4_viz view_robot.launch.py namespace:=turtlebot1
 
 ---
 
-## Terminal 7: Iniciar a Inspeção
+### Terminal 7: Iniciar a Inspeção
 
 Roda o sistema de inspeção autônoma. O `inspecao.py` é o ponto de entrada que conecta os módulos de navegação (`navegacao.py`) e câmera (`camera.py`):
 
@@ -190,7 +190,7 @@ python3 ws/src/inspecao.py
 
 ## Parte 2: Rodando no Robô Físico Real
 
-Para rodar no mundo real, **não** é necessário o simulador Gazebo nem o Docker. O código já está adaptado para funcionar direto no TurtleBot4 físico. O Cérebro (Ollama) deve estar rodando na máquina host (igual à Parte 1).
+Para rodar no mundo real, **não** é necessário o simulador Gazebo nem o Docker. O código já está adaptado para funcionar direto no TurtleBot4 físico. O Ollama deve estar rodando na máquina host (igual à Parte 1).
 
 ---
 
@@ -293,7 +293,8 @@ python3 src/inspecao.py --ros-args -p use_sim_time:=false -p namespace:=turtlebo
 ```
 
 O robô irá:
-1. Navegar autonomamente pelos waypoints da `ROTA` configurada.
-2. Ao chegar em cada ponto, girar devagar até localizar e decodificar o QR Code pela câmera.
-3. Enviar os dados ao agente Ollama e executar o scan lateral se a IA retornar `'fix'`.
-4. Ao final da rota, voltar automaticamente para a doca.
+1. Iniciar saindo automaticamente da doca.
+2. Navegar autonomamente pelos waypoints da `ROTA` configurada.
+3. Ao chegar em cada ponto, girar devagar até localizar e decodificar o QR Code pela câmera.
+4. Enviar os dados ao agente Ollama e executar o scan lateral se a IA retornar `'fix'`.
+5. Ao final da rota, voltar automaticamente para a doca.
