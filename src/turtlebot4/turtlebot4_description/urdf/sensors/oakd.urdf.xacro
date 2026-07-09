@@ -22,7 +22,7 @@
   <joint name="${name}_joint" type="fixed">
     <parent link="${parent_link}"/>
     <child link="${base_frame}"/>
-    <origin xyz="0 0 0.20" rpy="0 -1.5707963 0"/>
+    <origin xyz="0 0 0.20" rpy="0 0 0"/>
   </joint>
 
   <link name="${base_frame}">

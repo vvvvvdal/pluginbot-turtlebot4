@@ -1,0 +1,134 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <model name="cubos">
+    <static>true</static>
+
+    <link name="cubo_b">
+      <pose>2.0 1.0 0.25 0 0 3.1415</pose>
+      
+      <visual name="base_b">
+        <geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+        </material>
+      </visual>
+
+      <visual name="qr_b">
+        <pose>0.251 0 0 0 0 1.5708</pose> 
+        <geometry><box><size>0.44 0.001 0.44</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal><albedo_map>file:///home/dockeruser/ws/src/qrcode/b_qrcode.png</albedo_map></metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="qr_b_2">
+        <pose>-0.251 0 0 0 0 1.5708</pose> 
+        <geometry><box><size>0.44 0.001 0.44</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal><albedo_map>file:///home/dockeruser/ws/src/qrcode/b_qrcode.png</albedo_map></metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="qr_b_3">
+        <pose>0 0.251 0 0 0 0</pose> 
+        <geometry><box><size>0.44 0.001 0.44</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal><albedo_map>file:///home/dockeruser/ws/src/qrcode/b_qrcode.png</albedo_map></metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="qr_b_4">
+        <pose>0 -0.251 0 0 0 0</pose> 
+        <geometry><box><size>0.44 0.001 0.44</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal><albedo_map>file:///home/dockeruser/ws/src/qrcode/b_qrcode.png</albedo_map></metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <collision name="colisao_b">
+        <geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+      </collision>
+    </link>
+
+    <link name="cubo_a">
+      <pose>-3.0 0.5 0.25 0 0 0</pose>
+      
+      <visual name="base_a">
+        <geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+        </material>
+      </visual>
+
+      <visual name="qr_a">
+        <pose>0.251 0 0 0 0 1.5708</pose> 
+        <geometry><box><size>0.44 0.001 0.44</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal><albedo_map>file:///home/dockeruser/ws/src/qrcode/a_qrcode.png</albedo_map></metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="qr_a_2">
+        <pose>-0.251 0 0 0 0 1.5708</pose> 
+        <geometry><box><size>0.44 0.001 0.44</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal><albedo_map>file:///home/dockeruser/ws/src/qrcode/a_qrcode.png</albedo_map></metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="qr_a_3">
+        <pose>0 0.251 0 0 0 0</pose> 
+        <geometry><box><size>0.44 0.001 0.44</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal><albedo_map>file:///home/dockeruser/ws/src/qrcode/a_qrcode.png</albedo_map></metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="qr_a_4">
+        <pose>0 -0.251 0 0 0 0</pose> 
+        <geometry><box><size>0.44 0.001 0.44</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <pbr>
+            <metal><albedo_map>file:///home/dockeruser/ws/src/qrcode/a_qrcode.png</albedo_map></metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <collision name="colisao_a">
+        <geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
