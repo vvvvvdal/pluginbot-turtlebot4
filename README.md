@@ -3,6 +3,15 @@
 ## Sistema de inspeção de qualidade com visão computacional e Ollama no TurtleBot4
 
 ---
+
+## Vídeo de Apresentação
+
+<a href="https://www.youtube.com/watch?v=ztenR9NqbO8" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" width="24" style="vertical-align: middle;"> Pluginbot - Vídeo de Apresentação
+</a>
+
+---
+
 ![Teste DEFEITO DETECTADO](imgs/test_error.png)
 ![Teste INSPECIONANDO...](imgs/test_fix.png)
 ![Teste TUDO CERTO](imgs/test_ok.png)
